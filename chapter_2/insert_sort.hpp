@@ -1,4 +1,5 @@
-#include <iostream>
+#pragma once
+#include <cstddef>
 
 void insert_sort(int* a, std::size_t length)
 {
@@ -13,15 +14,4 @@ void insert_sort(int* a, std::size_t length)
 		}
 		a[index + 1] = key;
 	}
-}
-
-int main()
-{
-	int a[10] = { 2,1,3,5,6,3,8,1,23,1 };
-	insert_sort(a, 10);
-	for (auto& j : a) {
-		std::cout << j << " ";
-	}
-	std::cout << std::endl;
-	return 0;
 }
