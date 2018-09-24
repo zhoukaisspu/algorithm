@@ -16,6 +16,25 @@ void insert_sort(int* a, int length)
 	}
 }
 
+void insert_valid(int* A, int index)
+{
+	int value = A[index];
+	while ((index > 0) && (value < A[index -1])) {
+		A[index] = A[index -1];
+		--index;
+	}
+	A[index] = value;
+}
+
+
+void insert_sort_recursive(int* A, int length)
+{
+	if (length > 1) {
+		insert_sort_recursive(A, length - 1);
+		insert_valid(A, length -1);
+	}
+}
+
 void insert_sort_test()
 {
 	std::cout << "<<<<<<<<<<<<start insert sort test>>>>>>>>>>>>>>"
